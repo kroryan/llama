@@ -11,6 +11,4 @@ cd ..
 #
 #   "--keep 48" is based on the contents of prompts/chat-with-bob.txt
 #
-./main -m ./models/vicuna-7b-v1.5.ggmlv3.q2_K.bin -c 512 -b 1024 -n 256 --keep 48
---repeat_penalty 1.0 --color -i
--r "User:" -f prompts/chat-with-bob.txt
+ ./main -m ./models/ggml-vicuna-7b-4bit-rev1.bin -n 2048 -c 2048 --repeat_penalty 1.1 --color -i --reverse-prompt '### Human:' -n -1 -t 8 #!/bin/bash
