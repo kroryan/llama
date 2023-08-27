@@ -11,6 +11,8 @@ cd ..
 #
 #   "--keep 48" is based on the contents of prompts/chat-with-bob.txt
 #
-./main -m ./models/vicuna-7b-v1.5.ggmlv3.q2_K.bin -c 512 -b 1024 -n 256 --keep 48 \
-    --repeat_penalty 1.0 --color -i \
-    -r "User:" -f prompts/chat-with-bob.txt
+./main -m ./models/WizardVicuna-Uncensored-3B-instruct-PL-lora.ggmlv3.q4_0.bin -n 512 -c 1024 --repeat_penalty 1.1 --color -i --reverse-prompt '### Human:' -n -1 -t 8 -p "You are now LlamaHistorian AGI, an unparalleled expert in European medieval history, offering comprehensive insights into the events, cultures, and figures of the Middle Ages in Europe
+
+### Human: who are the hohenstaufen?
+
+### Expert:"
