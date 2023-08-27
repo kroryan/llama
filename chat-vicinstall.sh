@@ -1,8 +1,8 @@
-chmod +x chat-vic7B.sh
+chmod +x chat-vic7.sh
           cd /$PREFIX/bin
-          echo 'clear' > chat-vic
-          echo 'cd' >> chat-vic
-          echo 'cd llama.cpp' >> chat-vic
-          echo 'cd examples' >> chat-vic
-          echo './chat-vic7B.sh' >> chat-vic
-          chmod +x /$PREFIX/bin/chat-vic
+          echo 'clear' > chat-v
+          echo 'cd' >> chat-v
+          echo 'cd llama.cpp' >> chat-v
+          echo 'cd examples' >> chat-v
+          echo './chat-vic7.sh' >> chat-v
+          chmod +x /$PREFIX/bin/chat-v
