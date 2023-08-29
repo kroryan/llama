@@ -4,15 +4,15 @@ set -euo pipefail
 
 cd "$(dirname "$0")/.." || exit
 
-if [[ -z "${PROMPT_CACHE_FILE=chat.prompt.bin}" || -z "${CHAT_SAVE_DIR=./chat/default}" ]]; then
+if [[ -z "${PROMPT_CACHE_FILE=chat1.prompt.bin}" || -z "${CHAT_SAVE_DIR=./chat/story}" ]]; then
     echo >&2 "error: PROMPT_CACHE_FILE and CHAT_SAVE_DIR must be provided"
     exit 1
 fi
 
-MODEL="${MODEL:-/data/data/com.termux/files/home/koboldcpp /orca-mini-3b.ggmlv3.q4_0.bin}"
-PROMPT_TEMPLATE="${PROMPT_TEMPLATE:-./prompts/chat-with-bob.txt}"
-USER_NAME="${USER_NAME:-Human}"
-AI_NAME="${AI_NAME:-AIGPT}"
+MODEL="${MODEL:-/data/data/com.termux/files/home/models/Griffin-3B-Q4_1-GGML.bin}"
+PROMPT_TEMPLATE="${PROMPT_TEMPLATE:-./prompts/story.txt}"
+USER_NAME="${USER_NAME:-User}"
+AI_NAME="${AI_NAME:-llamaGPT}"
 DATE_TIME="$(date +%H:%M)"
 DATE_YEAR="$(date +%Y)"
 
@@ -63,7 +63,7 @@ if [[ ! -e "$PROMPT_CACHE_FILE" ]]; then
     echo 'Prompt cache does not exist, building...'
     # Default batch_size to 8 here for better user feedback during initial prompt processing
     ./main 2>>"$LOG" \
-        --batch_size 8 \
+        --batch_$1siz$1e 8 \
         "${OPTS[@]}" \
         --prompt-cache "$PROMPT_CACHE_FILE" \
         --file "$CUR_PROMPT_FILE" \
