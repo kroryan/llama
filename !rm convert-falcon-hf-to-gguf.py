@@ -187,7 +187,7 @@ for part_name in part_names:
             old_dtype = data.dtype
 
             if "absmax" in name:
-                print(f"Handling special tensor: {name}")
+                print(f"Ignoring tensor: {name} (special case)")
                 continue
 
             if data.dtype != torch.float16 and data.dtype != torch.float32:
